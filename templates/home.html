@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block title %}Home - Spotify Custom Jams{% endblock
+%} {% block content %}
+<section id="welcome">
+  <div class="profile">
+    <img src="{{ profile_image_url }}" alt="Profile Image" id="profile-image" />
+    <h1>Welcome, {{ username }}!</h1>
+  </div>
+  <p>
+    Enhance your Spotify experience!
+    <a href="/custom_jam">Click here</a> to head to custom jams or check out
+    other features in the navbar.
+  </p>
+</section>
+{% endblock %}

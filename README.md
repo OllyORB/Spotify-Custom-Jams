@@ -1,2 +1,2 @@
 # Spotify-Custom-Jams
-Improved version of Spotify's jams feature.
+Better Spotify Jams. It doesn't get much better than that.

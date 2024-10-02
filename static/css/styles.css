@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('/static/backgrounds/mixer.jpg');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(8px);
+}
+
+header {
+    background-color: #2874A6;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#player-container {
+    color: #f4f4f4;
+    max-width: 700px; /* Increase player width */
+    width: 100%;
+    margin: auto;
+}
+
+#song-cover img {
+    width: 300px; /* Increase size for a larger cover */
+    height: auto;
+    border-radius: 15px; /* Adjust border-radius */
+    margin-bottom: 5px; /* More space below the cover */
+}
+
+#song-info {
+    font-size: 32px; /* Increase font size */
+    margin: 15px 0; /* Increase margin */
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#song-info h3 {
+    font-size: 32px; /* Increase title font size */
+    margin: 10px 0;
+}
+
+#song-info p {
+    font-size: 28px; /* Increase artist font size */
+    margin: 0;
+}
+
+#playback-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Increase space between controls */
+    margin: 15px 0; /* More margin for spacing */
+}
+
+.control-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 28px; /* Increase button size */
+    color: #f4f4f4;
+}
+
+.control-button img {
+    width: 40px; /* Increase icon size */
+    height: auto;
+}
+
+#progress-container {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#progress-slider {
+    width: 100%;
+    height: 10px; /* Increase slider thickness */
+}
+
+#volume-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#volume-display {
+    width: 50px; /* Adjust width as needed */
+    text-align: center;
+}
+
+#volume-slider {
+    width: 200px; /* Increase width of volume slider */
+}
+
+#device-selection {
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #2874A6;
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+#foot_text {
+    padding-top: 6px;
+    font-size: 18px; /* Slightly larger footer text */
+}
