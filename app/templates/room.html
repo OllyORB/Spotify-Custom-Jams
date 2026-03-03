@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% block title %}Room - Custom Jams{% endblock %} {%
+block content %}
+<div id="room-container">
+  <h2>Room: {{ room_name }}</h2>
+  <button id="leave-room-btn">Leave Room</button>
+  <div id="user-list-box">
+    <h4>Users in this room:</h4>
+    <ul id="user-list"></ul>
+  </div>
+  <div id="now-playing-section">
+    <h3>Now Playing</h3>
+    <div id="now-playing-info">
+      <p id="now-playing-track">Nothing playing yet.</p>
+    </div>
+
+    <!-- This button will only show for the room creator -->
+    <button id="play-next-btn" style="display: none">Play Next</button>
+  </div>
+
+  <div id="queue-section">
+    <h3>Queue</h3>
+    <ul id="queue-list">
+      <!-- Tracks will go here -->
+    </ul>
+  </div>
+
+  <div id="add-track-section">
+    <input
+      type="text"
+      id="track-id-input"
+      placeholder="Enter Spotify Track ID"
+    />
+    <button id="add-track-btn">Add Track</button>
+  </div>
+</div>
+<div id="chat-container">
+  <ul id="chat-messages"></ul>
+  <input type="text" id="chat-input" placeholder="Type your message..." />
+  <button id="send-message-btn">Send</button>
+</div>
+
+{% endblock %} {% block scripts %}
+<script>
+  const roomId = Number("{{ room_id }}");
+  const roomName = "{{ room_name }}";
+  const currentUserId = "{{ user_id }}";
+  const roomCreatorId = "{{ room_creator_id }}";
+  const accessToken = "{{ access_token }}";
+</script>
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='js/rooms.js') }}"></script>
+{%endblock%}

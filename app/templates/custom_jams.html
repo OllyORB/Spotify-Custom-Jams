@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block title %} Custom Jams {% endblock %} {% block
+content %}
+<div id="room-creation">
+  <h2>Create a Room</h2>
+  <input type="text" id="room-name" placeholder="Enter Room Name" />
+  <button id="create-room-btn">Create Room</button>
+</div>
+
+<div id="rooms-list">
+  <h2>Available Rooms</h2>
+  <ul id="room-list-ul">
+    <!-- Room list items will be dynamically added here -->
+  </ul>
+</div>
+{% endblock %} {% block scripts %}
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='js/custom_jams.js') }}"></script>
+<script>
+  const currentUserId = "{{ current_user_id }}";
+</script>
+{% endblock %}

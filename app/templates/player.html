@@ -1,0 +1,92 @@
+{% extends 'base.html' %} {% block title %}Player - Spotify Custom Jams{%
+endblock %} {% block content %}
+<div id="player-container">
+  <div id="no-device-message" style="display: none">
+    <h2>No active device found</h2>
+    <p>
+      Please open spotify on a device to use the player (Note, sometimes you
+      must press play for the device to be considered active).
+    </p>
+  </div>
+
+  <!-- Song Cover -->
+  <div id="song-cover">
+    <img
+      src="{{ current_track_image_url }}"
+      alt="Current Song Cover"
+      id="current-song-image"
+    />
+  </div>
+
+  <!-- Song Title and Artist -->
+  <div id="song-info">
+    <h3 id="current-track-title">Track Title</h3>
+    <p id="current-track-artist">Track Artist</p>
+  </div>
+
+  <!-- Playback Controls -->
+  <div id="playback-controls">
+    <button id="shuffle-button" class="control-button">
+      <img
+        src="{{ url_for('static', filename='buttons/shuffle_off.png') }}"
+        alt="Shuffle"
+      />
+    </button>
+    <button id="prev-button" class="control-button">
+      <img
+        src="{{ url_for('static', filename='buttons/previous.png') }}"
+        alt="Previous"
+      />
+    </button>
+    <button id="play-pause-button" class="control-button">
+      <img
+        src="{{ url_for('static', filename='buttons/play.png') }}"
+        alt="Play"
+        id="play-pause-icon"
+      />
+    </button>
+    <button id="next-button" class="control-button">
+      <img
+        src="{{ url_for('static', filename='buttons/next.png') }}"
+        alt="Next"
+      />
+    </button>
+    <button id="repeat-button" class="control-button">
+      <img
+        src="{{ url_for('static', filename='buttons/repeat_off.png') }}"
+        alt="Repeat"
+      />
+    </button>
+  </div>
+
+  <!-- Progress Slider -->
+  <div id="progress-container">
+    <input
+      type="range"
+      id="progress-slider"
+      min="0"
+      max="100"
+      value="{{ current_track_position }}"
+      step="1"
+    />
+    <span id="current-time">{{ current_track_position_display }}</span> /
+    <span id="track-duration">{{ track_duration_display }}</span>
+  </div>
+
+  <!-- Volume Control -->
+  <div id="volume-container">
+    <label for="volume-slider">Volume:</label>
+    <input
+      type="range"
+      id="volume-slider"
+      min="0"
+      max="100"
+      value="{{ current_volume }}"
+      step="1"
+    />
+    <span id="volume-display">{{ current_volume }}</span>
+  </div>
+</div>
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='js/player.js') }}"></script>
+{% endblock %}
